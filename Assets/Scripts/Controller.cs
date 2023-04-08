@@ -7,9 +7,8 @@ public class Controller : MonoBehaviour
 {
     [Header("Controller settings")]
     [SerializeField] GameObject Player;
-    [SerializeField] private float moveSpeed; // The speed at which the character moves
-    private Rigidbody2D rbPlayer; // Reference to the character's Rigidbody2D component
-    private Rigidbody2D rbGameObject; // Reference to the character's Rigidbody2D component
+    [SerializeField] float moveSpeed; // The speed at which the character moves
+    private Rigidbody2D rb; // Reference to the character's Rigidbody2D component
     [Header("Echo Feature Settings")]
     [SerializeField] float echoRayDistance;
     [SerializeField] bool directionalEcho;
@@ -22,13 +21,12 @@ public class Controller : MonoBehaviour
     bool canShootRay;
     [SerializeField] Light2D doorLight;
 
+
     private void Start()
     {
         canShootRay = true ;
         lockCounter = 0;
-        Player = GameObject.FindGameObjectWithTag("Player");
-        rbPlayer = Player.GetComponent<Rigidbody2D>();
-        rbGameObject = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -41,7 +39,7 @@ public class Controller : MonoBehaviour
             if (circularEcho)
             {
                 StartCoroutine(EnableLight());
-                RaycastHit2D hit = Physics2D.CircleCast(Player.transform.position, echoRayDistance, Player.transform.right, 0f, layerMask); // Shoot the circle cast
+                RaycastHit2D hit = Physics2D.CircleCast(transform.position, echoRayDistance, transform.right, 0f, layerMask); // Shoot the circle cast
                 if (hit.collider != null)
                 {
 
@@ -78,7 +76,7 @@ public class Controller : MonoBehaviour
             {
                
                 StartCoroutine(EnableLight());
-                RaycastHit2D hit = Physics2D.Raycast(Player.transform.position, Player.transform.right, echoRayDistance, layerMask); // Shoot the circle cast
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, echoRayDistance, layerMask); // Shoot the circle cast
                 if (hit.collider != null)
                 {
                     if (hit.collider.gameObject.CompareTag("lock"))
@@ -124,8 +122,7 @@ public class Controller : MonoBehaviour
         // Set the character's velocity based on the input
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         movement.Normalize();
-        rbPlayer.velocity = movement * moveSpeed;
-        rbGameObject.velocity = movement * moveSpeed;
+        rb.velocity = movement * moveSpeed;
 
 
         // Clamp the character's velocity so they can't move faster diagonally
@@ -134,7 +131,7 @@ public class Controller : MonoBehaviour
         if (movement != Vector2.zero)
         {
             float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-            Player.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
 
@@ -155,7 +152,7 @@ public class Controller : MonoBehaviour
 
     void DrawRay()
     {
-        Debug.DrawRay(Player.transform.position, Player.transform.right * echoRayDistance, Color.green);
+        Debug.DrawRay(transform.position, transform.right * echoRayDistance, Color.green);
 
     }
 

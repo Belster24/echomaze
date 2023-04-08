@@ -8,11 +8,17 @@ public class Lock : MonoBehaviour
     [SerializeField] float rayDistance;
     [SerializeField]float currentTime;
     [SerializeField]LayerMask layerMask;
-    Light2D light;  
+    [SerializeField] bool lightFeature;
+    Light2D light;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         light = GetComponent<Light2D>();    
+        audioSource = GetComponent<AudioSource>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        InvokeRepeating("PlayAudio",1f,1f);
     }
 
     // Update is called once per frame
@@ -21,8 +27,8 @@ public class Lock : MonoBehaviour
         currentTime += Time.deltaTime;
         if (currentTime > lightTime)
         {
-          
-            StartCoroutine(EnableLight());
+            if(lightFeature)
+                StartCoroutine(EnableLight());
             RaycastHit2D hit = Physics2D.CircleCast(transform.position, rayDistance, transform.right, 0f, layerMask); //
             if (hit.collider != null)
             {
@@ -32,6 +38,15 @@ public class Lock : MonoBehaviour
 
             }
         }
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+        audioSource.volume = Mathf.Clamp(1.0f - (distance / 20.0f), 0.0f, 1.0f);
+
+
+    }
+
+    void PlayAudio()
+    {
+        audioSource.Play();
     }
 
     IEnumerator EnableLight()
