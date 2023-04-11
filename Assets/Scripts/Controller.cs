@@ -22,6 +22,8 @@ public class Controller : MonoBehaviour
     [SerializeField] Light2D doorLight;
 
 
+    [SerializeField] CircleGenerator circleGenerator;
+
     private void Start()
     {
         canShootRay = true ;
@@ -35,9 +37,11 @@ public class Controller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)&& canShootRay)
         {
+            circleGenerator.AnimateCircles();
             canShootRay = false;
             if (circularEcho)
             {
+                playerLightCircle.falloffIntensity = 0f;
                 StartCoroutine(EnableLight());
                 RaycastHit2D hit = Physics2D.CircleCast(transform.position, echoRayDistance, transform.right, 0f, layerMask); // Shoot the circle cast
                 if (hit.collider != null)
@@ -138,7 +142,8 @@ public class Controller : MonoBehaviour
 
     IEnumerator EnableLight()
     {
-        if(circularEcho)
+        GetComponent<AudioSource>().Play();
+        if (circularEcho)
             playerLightCircle.gameObject.SetActive(true);
         else if(directionalEcho)
             playerLightDirectional.gameObject.SetActive(true);
