@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EchoListener : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    private bool isListening = false;
     
 
     private void OnCollisionEnter(Collision collision)
@@ -17,12 +19,18 @@ public class EchoListener : MonoBehaviour
 
     void CheckForEcho()
     {
-        player.GetComponent<Controller>();
+         var controller = player.GetComponent<Controller>();
+         if (Input.GetKeyDown(KeyCode.Space) && !isListening)
+         {
+             isListening = true;
+             ListenerAction();
+         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void ListenerAction()
     {
-        
+        Debug.Log("Listener listens!");
     }
+
+   
 }
