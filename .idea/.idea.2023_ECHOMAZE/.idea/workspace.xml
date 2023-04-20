@@ -31,7 +31,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity 2021.3.16f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\mikol\Desktop\Things\GIT\2023_ECHOMAZE -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\mikol\Desktop\Things\GIT\2023_ECHOMAZE" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -70,6 +70,9 @@
       <workItem from="1681197965789" duration="7280000" />
       <workItem from="1681214352701" duration="5581000" />
       <workItem from="1681229954250" duration="179000" />
+      <workItem from="1681314951925" duration="62000" />
+      <workItem from="1681320946713" duration="215000" />
+      <workItem from="1681413183778" duration="13000" />
     </task>
     <servers />
   </component>
