@@ -17,7 +17,7 @@ public class Controller : MonoBehaviour
     [SerializeField] Light2D playerLightCircle;
     [SerializeField] Light2D playerLightDirectional;
     [SerializeField] float lightTime;
-    int lockCounter;
+    [SerializeField] CircleInstantiator circleInstantiator; 
     bool canShootRay;
     [SerializeField] Light2D doorLight;
 
@@ -25,8 +25,8 @@ public class Controller : MonoBehaviour
     private void Start()
     {
         canShootRay = true ;
-        lockCounter = 0;
         rb = GetComponent<Rigidbody2D>();
+        circleInstantiator = GetComponentInParent<CircleInstantiator>();
     }
 
     private void Update()
@@ -38,73 +38,69 @@ public class Controller : MonoBehaviour
             canShootRay = false;
             if (circularEcho)
             {
-                StartCoroutine(EnableLight());
-                RaycastHit2D hit = Physics2D.CircleCast(transform.position, echoRayDistance, transform.right, 0f, layerMask); // Shoot the circle cast
-                if (hit.collider != null)
-                {
+                StartCoroutine(StartEcho());
+                //RaycastHit2D hit = Physics2D.CircleCast(transform.position, echoRayDistance, transform.right, 0f, layerMask); // Shoot the circle cast
+                //if (hit.collider != null)
+                //{
 
-                    if (hit.collider.gameObject.CompareTag("lock"))
-                    {
-                        lockCounter++;
-                        Destroy(hit.collider.gameObject);
-                        if (lockCounter == 2)
-                        {
-                            doorLight.color = Color.green;
-                        }
+                //    if (hit.collider.gameObject.CompareTag("lock"))
+                //    {
+                //        Destroy(hit.collider.gameObject);
+                      
 
 
-                    }
+                //    }
 
-                    else if (hit.collider.gameObject.CompareTag("door"))
-                    {
-                        if (lockCounter == 2)
-                        {
-                            Destroy(hit.collider.gameObject);
-                        }
+                //    else if (hit.collider.gameObject.CompareTag("door"))
+                //    {
+                //        if (lockCounter == 2)
+                //        {
+                //            Destroy(hit.collider.gameObject);
+                //        }
 
-                    }
+                //    }
 
 
 
 
-                }
+                //}
 
             }
 
 
-            else if (directionalEcho)
-            {
+            //else if (directionalEcho)
+            //{
                
-                StartCoroutine(EnableLight());
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, echoRayDistance, layerMask); // Shoot the circle cast
-                if (hit.collider != null)
-                {
-                    if (hit.collider.gameObject.CompareTag("lock"))
-                    {
-                        lockCounter++;
-                        Destroy(hit.collider.gameObject);
-                        if (lockCounter == 2)
-                        {
-                            doorLight.color = Color.green;
-                        }
+            //    StartCoroutine(EnableLight());
+            //    RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, echoRayDistance, layerMask); // Shoot the circle cast
+            //    if (hit.collider != null)
+            //    {
+            //        if (hit.collider.gameObject.CompareTag("lock"))
+            //        {
+            //            lockCounter++;
+            //            Destroy(hit.collider.gameObject);
+            //            if (lockCounter == 2)
+            //            {
+            //                doorLight.color = Color.green;
+            //            }
 
 
-                    }
+            //        }
 
-                    else if (hit.collider.gameObject.CompareTag("door")) 
-                    {
-                        if (lockCounter == 2)
-                        {
-                          Destroy(hit.collider.gameObject); 
-                        }
+            //        else if (hit.collider.gameObject.CompareTag("door")) 
+            //        {
+            //            if (lockCounter == 2)
+            //            {
+            //              Destroy(hit.collider.gameObject); 
+            //            }
 
-                    }
+            //        }
 
 
                     
 
-                }
-            }
+            //    }
+            //}
 
            
 
@@ -124,30 +120,24 @@ public class Controller : MonoBehaviour
         movement.Normalize();
         rb.velocity = movement * moveSpeed;
 
-
-        // Clamp the character's velocity so they can't move faster diagonally
-        //rb.velocity = Vector2.ClampMagnitude(rb.velocity, moveSpeed);
-
-        if (movement != Vector2.zero)
-        {
-            float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        }
     }
 
 
-    IEnumerator EnableLight()
+    IEnumerator StartEcho()
     {
-        if(circularEcho)
-            playerLightCircle.gameObject.SetActive(true);
-        else if(directionalEcho)
-            playerLightDirectional.gameObject.SetActive(true);
+        circleInstantiator.Invoking();
         yield return new WaitForSeconds(lightTime);
-        if (circularEcho)
-            playerLightCircle.gameObject.SetActive(false);
-        else if (directionalEcho)
-            playerLightDirectional.gameObject.SetActive(false);
         canShootRay = true;
+        //if(circularEcho)
+        //    playerLightCircle.gameObject.SetActive(true);
+        //else if(directionalEcho)
+        //    playerLightDirectional.gameObject.SetActive(true);
+        //yield return new WaitForSeconds(lightTime);
+        //if (circularEcho)
+        //    playerLightCircle.gameObject.SetActive(false);
+        //else if (directionalEcho)
+        //    playerLightDirectional.gameObject.SetActive(false);
+        //canShootRay = true;
     }
 
     void DrawRay()
