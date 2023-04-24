@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]AudioClip wallSound;
     [SerializeField] GameObject door;
 
-    int lockCount = 0;
+    [SerializeField]int lockCount = 0;
 
     // Start is called before the first frame update
     void Start()

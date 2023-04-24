@@ -2,8 +2,14 @@ using UnityEngine;
 
 public class CircleInstantiator : MonoBehaviour
 {
-    int numObjects = 12;
+    [SerializeField]int numObjects = 12;
+    [SerializeField] float radius;
     public GameObject prefab;
+    AudioSource audioSource;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void Invoking()
     {
         Invoke("circle", 0f);
@@ -13,11 +19,12 @@ public class CircleInstantiator : MonoBehaviour
 
     void circle()
     {
+        audioSource.Play();
         Vector3 center = transform.position;
         for (int i = 0; i < numObjects; i++)
         {
             int a = i * 30;
-            Vector3 pos = RandomCircle(center, 1.0f, a);
+            Vector3 pos = RandomCircle(center, radius, a);
             GameObject obj = Instantiate(prefab, pos, Quaternion.identity);
             Vector2 dir = transform.position - pos;
             obj.transform.rotation = Quaternion.LookRotation(Vector3.forward, dir);
@@ -25,7 +32,6 @@ public class CircleInstantiator : MonoBehaviour
     }
     Vector3 RandomCircle(Vector3 center, float radius, int a)
     {
-        Debug.Log(a);
         float ang = a;
         Vector3 pos;
         pos.x = center.x + radius * Mathf.Sin(ang * Mathf.Deg2Rad);

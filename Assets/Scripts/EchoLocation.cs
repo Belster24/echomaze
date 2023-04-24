@@ -6,8 +6,6 @@ using UnityEngine.Rendering.Universal;
 public class EchoLocation : MonoBehaviour
 {
     Rigidbody2D rigidbody;  
-    [SerializeField] Color32 colorForWall;
-    [SerializeField] Color32 colorForEnemy;
     [SerializeField] float forceMagnitude;
     [SerializeField] float shrinkRate;
     int collisionCount;
@@ -38,6 +36,11 @@ public class EchoLocation : MonoBehaviour
             collision.gameObject.GetComponent<LightFunction>().enableLight();
 
         } else if (collision.gameObject.tag == "enemy")
+        {
+
+            gameObject.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<Light2D>().color;
+            collision.gameObject.GetComponent<LightFunction>().enableLight();
+        }else if (collision.gameObject.tag == "lock")
         {
 
             gameObject.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<Light2D>().color;
