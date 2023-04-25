@@ -35,7 +35,7 @@ public class CircleInstantiator : MonoBehaviour
         for (int i = 0; i < numObjects; i++)
             dots.Add(null); // fill list with nulls
         
-        for (int i = 0; i < numObjects; i++)
+        for (int i = 0; i <= numObjects; i++)
         {
             int a = i * 30;
             Vector3 pos = RandomCircle(center, radius, a);
@@ -50,7 +50,7 @@ public class CircleInstantiator : MonoBehaviour
 
             }
             previousDotListed = obj.GetComponent<EchoLocation>();
-            if (i == numObjects-1)
+            if (i == numObjects)
                 obj.GetComponent<EchoLocation>().nextDot = dots[0];
             
             Vector2 dir = transform.position - pos;
