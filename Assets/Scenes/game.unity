@@ -1220,13 +1220,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ECHOMAZE
+  m_text: '<b>ECHOMAZE</b>
 
+    Shout <b>Echo</b> with Space
 
-    Find the Keys and Escape.'
+    Find the Keys and
+    Escape'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1f8354a1af624c449b2f651c07bad0c2, type: 2}
+  m_sharedMaterial: {fileID: 2673582545203145333, guid: 1f8354a1af624c449b2f651c07bad0c2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3536,7 +3538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &939332214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4411,7 +4413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1198914649
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8609,7 +8611,7 @@ MonoBehaviour:
   Player: {fileID: 2096874532}
   moveSpeed: 5
   echoRayDistance: 10
-  directionalEcho: 0
+  directionalEcho: 1
   circularEcho: 1
   layerMask:
     serializedVersion: 2
@@ -8644,7 +8646,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ee1f2ed543d23d949bab1bd416d3982c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c3e74d6e77f4a3e47856a7ed318dde95, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -8742,6 +8744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f72b405065a044a970a34b5d10b251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numObjects: 24
+  numObjects: 12
   radius: 0.1
+  dotSpeed: 0.43
+  speedDecrease: 1
   prefab: {fileID: 8879349837314964990, guid: b93b8d15fedc92b4dbff2bce61f9615b, type: 3}
