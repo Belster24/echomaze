@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.Serialization;
 
 public class EchoLocation : MonoBehaviour
 {
@@ -14,7 +10,7 @@ public class EchoLocation : MonoBehaviour
     [SerializeField] float forceMagnitude;
     [SerializeField] float shrinkRate;
     [SerializeField] public float speed;
-    [SerializeField] float speedDecrease;
+    [SerializeField] public float speedDecrease;
     public float newThickness;
     public EchoLocation previousDot;
     public EchoLocation nextDot;

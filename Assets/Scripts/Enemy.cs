@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -12,9 +10,20 @@ public class Enemy : MonoBehaviour
     [SerializeField] float distanceHear;
     [SerializeField] Vector2 rangeStart;
     [SerializeField] Vector2 rangeEnd;
-    [SerializeField]Vector3 posMoveEnemy;
+    [SerializeField] Vector3 posMoveEnemy;
     Vector2 startPoint;
-    // Start is called before the first frame update
+    
+    private void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the position of the posMoveEnemy
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(posMoveEnemy, 0.5f);
+
+        // Draw a green line from the enemy to the posMoveEnemy
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, posMoveEnemy);
+
+    }
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
