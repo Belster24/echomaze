@@ -1220,13 +1220,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ECHOMAZE
+  m_text: '<b>ECHOMAZE</b>
 
+    Shout <b>Echo</b> with Space
 
-    Find the Keys and Escape.'
+    Find the Keys and
+    Escape'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1f8354a1af624c449b2f651c07bad0c2, type: 2}
+  m_sharedMaterial: {fileID: 2673582545203145333, guid: 1f8354a1af624c449b2f651c07bad0c2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2589,51 +2591,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584914475}
   m_CullTransparentMesh: 1
---- !u!1 &589041717
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 589041719}
-  - component: {fileID: 589041718}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &589041718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589041717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d66eab72cd00784e83a4ca6390899ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: []
---- !u!4 &589041719
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589041717}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.475903, y: 1.2712156, z: 0.59227884}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &593473164
 GameObject:
   m_ObjectHideFlags: 0
@@ -3581,7 +3538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &939332214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4456,7 +4413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1198914649
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8526,7 +8483,6 @@ GameObject:
   - component: {fileID: 2096874539}
   - component: {fileID: 2096874541}
   - component: {fileID: 2096874540}
-  - component: {fileID: 2096874542}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -8655,7 +8611,7 @@ MonoBehaviour:
   Player: {fileID: 2096874532}
   moveSpeed: 5
   echoRayDistance: 10
-  directionalEcho: 0
+  directionalEcho: 1
   circularEcho: 1
   layerMask:
     serializedVersion: 2
@@ -8690,7 +8646,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ee1f2ed543d23d949bab1bd416d3982c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c3e74d6e77f4a3e47856a7ed318dde95, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -8788,21 +8744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f72b405065a044a970a34b5d10b251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numObjects: 24
+  numObjects: 12
   radius: 0.1
+  dotSpeed: 0.43
+  speedDecrease: 1
   prefab: {fileID: 8879349837314964990, guid: b93b8d15fedc92b4dbff2bce61f9615b, type: 3}
---- !u!114 &2096874542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096874532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91888ace75247df429e4cdd8895c961e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  circlePrefab: {fileID: 8879349837314964990, guid: b93b8d15fedc92b4dbff2bce61f9615b, type: 3}
-  growthRate: 10
-  fadeTime: 1
