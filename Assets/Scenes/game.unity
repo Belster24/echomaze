@@ -8526,6 +8526,7 @@ GameObject:
   - component: {fileID: 2096874539}
   - component: {fileID: 2096874541}
   - component: {fileID: 2096874540}
+  - component: {fileID: 2096874542}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -8790,3 +8791,18 @@ MonoBehaviour:
   numObjects: 24
   radius: 0.1
   prefab: {fileID: 8879349837314964990, guid: b93b8d15fedc92b4dbff2bce61f9615b, type: 3}
+--- !u!114 &2096874542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096874532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91888ace75247df429e4cdd8895c961e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circlePrefab: {fileID: 8879349837314964990, guid: b93b8d15fedc92b4dbff2bce61f9615b, type: 3}
+  growthRate: 10
+  fadeTime: 1
