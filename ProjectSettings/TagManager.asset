@@ -8,6 +8,7 @@ TagManager:
   - door
   - wall
   - enemy
+  - level
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
-  - 
+  - Echo
+  - Cave
   - 
   - 
   - 

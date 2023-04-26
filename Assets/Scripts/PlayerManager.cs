@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
@@ -30,15 +28,15 @@ public class PlayerManager : MonoBehaviour
             lockCount++;
             if (lockCount >= 2)
             {
-                door.GetComponent<Light2D>().color = Color.green;   
-                door.GetComponent<DoorEscape>().canEndLevel = true;
-            
+                door.GetComponent<Light2D>().color = Color.green;
+                door.GetComponent<Door>().isLocked = false;
+
             }
 
         }
         else if (collision.gameObject.CompareTag("enemy"))
         {
-            SceneManager.LoadScene("game");
+            SceneManager.LoadScene("level_1");
         }
     }
 }

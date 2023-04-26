@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using Shapes2D;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 public class LightFunction : MonoBehaviour
@@ -13,10 +13,11 @@ public class LightFunction : MonoBehaviour
 
     IEnumerator enable()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = GetComponent<Light2D>().color;
+        //  gameObject.GetComponent<Shape>().settings.fillColor2 = GetComponent<Light2D>().color;
         gameObject.GetComponent<Light2D>().enabled = true;
         yield return new WaitForSeconds(2f);
         gameObject.GetComponent<Light2D>().enabled = false;
+        gameObject.GetComponent<Shape>().settings.fillColor2 = Color.black;
     }
 
 
