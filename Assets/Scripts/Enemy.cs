@@ -8,34 +8,17 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField] AudioSource audioSource;
     [SerializeField] float distanceHear;
-    [SerializeField] Vector2 rangeStart;
-    [SerializeField] Vector2 rangeEnd;
     [SerializeField] Vector3 posMoveEnemy;
+    [SerializeField] float rangeEnemyCanGo;
+    Vector2 defaultPos;
     Vector2 startPoint;
     
-    private void OnDrawGizmosSelected()
-    {
-        // Draw a yellow sphere at the position of the posMoveEnemy
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(posMoveEnemy, 0.5f);
-
-        // Draw a green line from the enemy to the posMoveEnemy
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, posMoveEnemy);
-
-    }
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         startPoint = transform.position;
         audioSource = GetComponent<AudioSource>();
         InvokeRepeating("PlayAudio", 1f, 1f);
-        rangeStart.x = transform.position.x-10f;
-        rangeEnd.x = transform.position.x+10f;
-        rangeStart.y = transform.position.y - 10f;
-        rangeEnd.y = transform.position.y + 10f;    
-        posMoveEnemy.x = Random.Range(rangeStart.x, rangeEnd.x);
-        posMoveEnemy.y = Random.Range(rangeStart.y, rangeEnd.y);
        
     }
 
@@ -43,33 +26,14 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, posMoveEnemy, moveSpeed * Time.deltaTime);
-        //Vector2 objectVector = Player.transform.position - transform.position;
-        //float dot = Vector2.Dot(objectVector, Vector2.up);
-        //if (dot > 1)
-        //{
-        //    audioSource.panStereo = 1f;
-        //}
-        //else if (dot < -1)
-        //{
-        //    audioSource.panStereo = -1f;
-        //}
-        //else
-        //{
-
-        //    audioSource.panStereo = 0f;
-        //}
-        if ( Mathf.Abs(Vector2.Distance(Player.transform.position, transform.position)) < distanceToSee )
+        if (Mathf.Abs(Vector2.Distance(Player.transform.position, transform.position)) < distanceToSee)
         {
             posMoveEnemy = Player.transform.position;
 
         }
-        else        
+        else
         {
-            if (Vector2.Distance(transform.position, posMoveEnemy) <= 5f)
-            {
-                posMoveEnemy.x = Random.Range(rangeStart.x, rangeEnd.x);
-                posMoveEnemy.y = Random.Range(rangeStart.y, rangeEnd.y);
-            }
+            posMoveEnemy = defaultPos;
 
         }
 

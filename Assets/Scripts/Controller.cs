@@ -36,75 +36,8 @@ public class Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)&& canShootRay)
         {
             canShootRay = false;
-            if (circularEcho)
-            {
-                StartCoroutine(StartEcho());
-                //RaycastHit2D hit = Physics2D.CircleCast(transform.position, echoRayDistance, transform.right, 0f, layerMask); // Shoot the circle cast
-                //if (hit.collider != null)
-                //{
-
-                //    if (hit.collider.gameObject.CompareTag("lock"))
-                //    {
-                //        Destroy(hit.collider.gameObject);
-                      
-
-
-                //    }
-
-                //    else if (hit.collider.gameObject.CompareTag("door"))
-                //    {
-                //        if (lockCounter == 2)
-                //        {
-                //            Destroy(hit.collider.gameObject);
-                //        }
-
-                //    }
-
-
-
-
-                //}
-
-            }
-
-
-            //else if (directionalEcho)
-            //{
-               
-            //    StartCoroutine(EnableLight());
-            //    RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, echoRayDistance, layerMask); // Shoot the circle cast
-            //    if (hit.collider != null)
-            //    {
-            //        if (hit.collider.gameObject.CompareTag("lock"))
-            //        {
-            //            lockCounter++;
-            //            Destroy(hit.collider.gameObject);
-            //            if (lockCounter == 2)
-            //            {
-            //                doorLight.color = Color.green;
-            //            }
-
-
-            //        }
-
-            //        else if (hit.collider.gameObject.CompareTag("door")) 
-            //        {
-            //            if (lockCounter == 2)
-            //            {
-            //              Destroy(hit.collider.gameObject); 
-            //            }
-
-            //        }
-
-
-                    
-
-            //    }
-            //}
-
-           
-
-
+            StartCoroutine(StartEcho());
+            
         }
         
     }

@@ -20,7 +20,6 @@ public class EchoLocation : MonoBehaviour
     {
   
         line = GetComponent<LineRenderer>();
-        
         rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.AddForce(-transform.up * speed, ForceMode2D.Impulse);
 
