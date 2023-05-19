@@ -51,10 +51,13 @@ public class EchoLocation : MonoBehaviour
 
         if (collision.gameObject.tag == "wall")
         {
+            
             gameObject.GetComponentInChildren<SpriteRenderer>().color = collision.gameObject.GetComponent<Light2D>().color;
             line.startColor = collision.gameObject.GetComponent<Light2D>().color;
             nextDot!.line.endColor = collision.gameObject.GetComponent<Light2D>().color;
             collision.gameObject.GetComponent<LightFunction>().enableLight();
+
+            
 
         } else if (collision.gameObject.tag == "enemy")
         {
@@ -69,6 +72,10 @@ public class EchoLocation : MonoBehaviour
             nextDot!.line.endColor = collision.gameObject.GetComponent<Light2D>().color;
             rigidbody.AddForce(-transform.up * speed, ForceMode2D.Impulse);
             collision.gameObject.GetComponent<LightFunction>().enableLight();
+        }
+        else if(collision.gameObject.tag == "newLock")
+        {
+            Debug.Log("Hit lock");
         }
     }
 

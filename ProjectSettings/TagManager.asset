@@ -9,6 +9,7 @@ TagManager:
   - wall
   - enemy
   - level
+  - newLock
   layers:
   - Default
   - TransparentFX

@@ -35,6 +35,7 @@ public class Controller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)&& canShootRay)
         {
+            
             canShootRay = false;
             if (circularEcho)
             {

@@ -1,9 +1,14 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Door : MonoBehaviour
 {
+
+   
+
     public GameManager gameManager;
 
     public enum DoorType
@@ -20,17 +25,19 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
-        if (locks.Count > 0)
-            isLocked = true;
+     //   if (locks.Count > 0)
+      //      isLocked = true;
+       
     }
     
 
-   
+
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (locks.Count <= 0)
-            isLocked = false; //if no locks, unlock door, this is just a precaution, doors should be unlocked at lock
+       // if (locks.Count <= 0)
+       //     isLocked = false; //if no locks, unlock door, this is just a precaution, doors should be unlocked at lock
 
         if (other.CompareTag("Player") && !isLocked)
         {
