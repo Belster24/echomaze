@@ -9,6 +9,8 @@ TagManager:
   - wall
   - enemy
   - level
+  - bell
+  - belldoormanager
   layers:
   - Default
   - TransparentFX

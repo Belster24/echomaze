@@ -26,7 +26,8 @@ public class DragAndShoot : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            GetComponent<HighScoreTime>().startTimer = true;
+            if(gameObject.GetComponent<HighScoreTime>() != null)
+                GetComponent<HighScoreTime>().startTimer = true;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = transform.position.z;
             transform.position = Vector3.MoveTowards(transform.position, mousePos, moveSpeed * Time.deltaTime);

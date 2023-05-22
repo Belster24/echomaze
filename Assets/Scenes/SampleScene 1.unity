@@ -2046,7 +2046,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numObjects: 33
+  numberOfCircles: 3
+  circleDelay: 0.4
   radius: 1.48
+  dotSpeed: 10
+  speedDecrease: 1
   prefab: {fileID: 8879349837314964990, guid: b93b8d15fedc92b4dbff2bce61f9615b, type: 3}
 --- !u!114 &1685775422
 MonoBehaviour:

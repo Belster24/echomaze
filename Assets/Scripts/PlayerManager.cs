@@ -7,12 +7,14 @@ public class PlayerManager : MonoBehaviour
     AudioSource audioSource;
     [SerializeField]AudioClip wallSound;
     [SerializeField] GameObject door;
+    [SerializeField] GameObject bellAndDoorManager;
 
     [SerializeField]int lockCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        bellAndDoorManager = GameObject.FindGameObjectWithTag("belldoormanager");
         audioSource = GetComponent<AudioSource>();    
     }
 
@@ -25,18 +27,12 @@ public class PlayerManager : MonoBehaviour
         else if (collision.gameObject.CompareTag("lock"))
         {
             Destroy(collision.gameObject);
-            lockCount++;
-            if (lockCount >= 2)
-            {
-                door.GetComponent<Light2D>().color = Color.green;
-                door.GetComponent<Door>().isLocked = false;
-
-            }
-
+            bellAndDoorManager.GetComponent<BellAndDoor>().count++; 
         }
-        else if (collision.gameObject.CompareTag("enemy"))
-        {
-            SceneManager.LoadScene("level_1");
+
+            //else if (collision.gameObject.CompareTag("enemy"))
+            //{
+            //    SceneManager.LoadScene("level_1");
+            //}
         }
-    }
 }

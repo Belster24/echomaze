@@ -39,6 +39,11 @@ public class EchoLocationOld : MonoBehaviour
 
             gameObject.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<Light2D>().color;
             collision.gameObject.GetComponent<LightFunction>().enableLight();
+        }else if (collision.gameObject.tag == "door")
+        {
+
+            gameObject.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<Light2D>().color;
+            collision.gameObject.GetComponent<LightFunction>().enableLight();
         }
     }
 }
