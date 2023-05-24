@@ -5,10 +5,11 @@ using UnityEngine.Rendering.Universal;
 
 public class BellAndDoor : MonoBehaviour
 {
-    [SerializeField]List <GameObject> bells = new List <GameObject> ();
+    [SerializeField]List <GameObject> locks = new List <GameObject> ();
     [SerializeField] GameObject door;
     AudioSource audioSource;
     [SerializeField] AudioClip []clips = new AudioClip [2];
+    [HideInInspector]
     public int count;
 
     private void Start()
@@ -19,7 +20,7 @@ public class BellAndDoor : MonoBehaviour
 
     private void Update()
     {
-        if (count == bells.Count)
+        if (count == locks.Count) //this will change the door color when all the keys are catched
         {
            door.gameObject.GetComponent<Light2D>().color = Color.green;
             audioSource.clip = clips[1];

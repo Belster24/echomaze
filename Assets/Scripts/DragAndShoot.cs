@@ -65,19 +65,26 @@ public class DragAndShoot : MonoBehaviour
 
     private void OnMouseUp()
     {
+        Invoke("ShootingWave", 0f);
+        Invoke("ShootingWave", 0.3f);
+        Invoke("ShootingWave", 0.8f);
+           
         
-            float force = power * Vector2.Distance(dragStartPos, dragEndPos);
-            Vector2 spawnPos = transform.position + (Vector3)dragDirection * 0.5f;
-            float angleStep = spreadAngle / (numProjectiles - 1);
-            float startAngle = -spreadAngle / 2f;
-            for (int i = 0; i < numProjectiles; i++)
-            {
-                float angle = startAngle + i * angleStep;
-                Vector2 direction = Quaternion.Euler(0f, 0f, angle) * dragDirection;
+    }
 
-                GameObject echoBall = Instantiate(echoPrefab, spawnPos, Quaternion.identity);
-                echoBall.GetComponent<Rigidbody2D>().AddForce(direction * force, ForceMode2D.Impulse);
-            }
-        
+    void ShootingWave()
+    {
+        float force = power * Vector2.Distance(dragStartPos, dragEndPos);
+        Vector2 spawnPos = transform.position + (Vector3)dragDirection * 0.5f;
+        float angleStep = spreadAngle / (numProjectiles - 1);
+        float startAngle = -spreadAngle / 2f;
+        for (int i = 0; i < numProjectiles; i++)
+        {
+            float angle = startAngle + i * angleStep;
+            Vector2 direction = Quaternion.Euler(0f, 0f, angle) * dragDirection;
+
+            GameObject echoBall = Instantiate(echoPrefab, spawnPos, Quaternion.identity);
+            echoBall.GetComponent<Rigidbody2D>().AddForce(direction * force, ForceMode2D.Impulse);
+        }
     }
 }

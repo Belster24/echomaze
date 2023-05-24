@@ -443,7 +443,6 @@ GameObject:
   - component: {fileID: 4850512519193491802}
   - component: {fileID: 4850512519193491796}
   - component: {fileID: 4850512519193491797}
-  - component: {fileID: 4850512519193491798}
   - component: {fileID: 4850512519193491799}
   - component: {fileID: 4850512519193491792}
   - component: {fileID: 4850512519193491795}
@@ -564,31 +563,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.63716465
---- !u!114 &4850512519193491798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4850512519193491800}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d8506377a23b4e4187ee2a71977b429, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 4850512519193491800}
-  moveSpeed: 5
-  echoRayDistance: 10
-  directionalEcho: 1
-  circularEcho: 1
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 51
-  playerLightCircle: {fileID: 4850512519254414659}
-  playerLightDirectional: {fileID: 4850512518401781797}
-  lightTime: 2
-  circleInstantiator: {fileID: 0}
-  doorLight: {fileID: 0}
 --- !u!114 &4850512519193491799
 MonoBehaviour:
   m_ObjectHideFlags: 0
