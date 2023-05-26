@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField]int lockCount = 0;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,8 @@ public class PlayerManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+       
+
         if (collision.gameObject.CompareTag("wall"))
         {
             audioSource.PlayOneShot(wallSound);

@@ -7,8 +7,9 @@ public class EchoLocationOld : MonoBehaviour
 
     [SerializeField] float shrinkRate;
     int collisionCount;
-  
+    [SerializeField] GameObject lightToGennerate;
 
+ 
     private void Update()
     {
         Vector3 newScale = transform.localScale;
@@ -21,9 +22,18 @@ public class EchoLocationOld : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        
         if (collision.gameObject.tag == "wall")
         {
+
+
+            GameObject spawnedLight = GameObject.FindGameObjectWithTag("spawnedlight");
+            if (spawnedLight == null)
+            {
+                ContactPoint2D contact = collision.contacts[0];
+                Instantiate(lightToGennerate, contact.point, Quaternion.identity);
+            }
+           
             gameObject.GetComponent<SpriteRenderer>().color = collision.gameObject.GetComponent<Light2D>().color;
             collision.gameObject.GetComponent<LightFunction>().enableLight();
 
@@ -46,4 +56,9 @@ public class EchoLocationOld : MonoBehaviour
             collision.gameObject.GetComponent<LightFunction>().enableLight();
         }
     }
+
+
+
+
+
 }

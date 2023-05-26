@@ -137,3 +137,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkRate: 0.03
+  lightToGennerate: {fileID: 190906946965978234, guid: c1aef8afbdbea094a8225a77b8b6ea60, type: 3}
