@@ -10,8 +10,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] float distanceHear;
     [SerializeField] Vector3 posMoveEnemy;
     [SerializeField] float rangeEnemyCanGo;
-    Vector2 defaultPos;
-    Vector2 startPoint;
+    public Vector2 defaultPos;
+    public Vector2 startPoint;
+    public Vector2 posNow;
+    public bool toBack = false;
     
     void Start()
     {
@@ -25,6 +27,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        posNow = transform.position;
+
         transform.position = Vector2.MoveTowards(transform.position, posMoveEnemy, moveSpeed * Time.deltaTime);
         if (Mathf.Abs(Vector2.Distance(Player.transform.position, transform.position)) < distanceToSee)
         {
@@ -33,8 +37,26 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            
             posMoveEnemy = defaultPos;
 
+           
+        }
+
+        if(posNow == defaultPos || toBack) 
+        {
+            toBack = true;
+            posMoveEnemy = startPoint;
+            
+            if(posNow == startPoint)
+            {
+                toBack = false;
+            }
+        }
+        if(!toBack)
+        {
+            posMoveEnemy = defaultPos;
+            
         }
 
         float distance = Vector2.Distance(transform.position, Player.transform.position);

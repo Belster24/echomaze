@@ -9,17 +9,43 @@ public class EchoLocationOld : MonoBehaviour
     int collisionCount;
     [SerializeField] GameObject lightToGennerate;
 
- 
+    //line renderer
+
+    public LineRenderer line;
+    private bool hasLine = true;
+    public float newThickness;
+    public EchoLocationOld previousDot;
+    public EchoLocationOld nextDot;
+
+    private void Start()
+    {
+        line = GetComponent<LineRenderer>();
+    }
+
+
     private void Update()
     {
         Vector3 newScale = transform.localScale;
         newScale -= Vector3.one * shrinkRate * Time.deltaTime;
         transform.localScale = newScale;
+
+        if (previousDot != null && hasLine)
+        {
+            line.SetPosition(0, transform.position);
+            line.SetPosition(1, previousDot.transform.position);
+            newThickness = newScale.x;
+            line.SetWidth(newThickness, newThickness);
+        }
+
         if (newScale.x <= 0f)
         {
             Destroy(gameObject);
         }
+
     }
+
+    
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         

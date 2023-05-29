@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2883317979734481797}
   - component: {fileID: 2883317979734481794}
   - component: {fileID: 2883317979734481796}
+  - component: {fileID: 425091487312683567}
   - component: {fileID: 2883317979734481799}
   - component: {fileID: 2883317979734481798}
   m_Layer: 0
@@ -211,9 +212,29 @@ MonoBehaviour:
   Player: {fileID: 0}
   audioSource: {fileID: 0}
   distanceHear: 6
-  rangeStart: {x: 0, y: 0}
-  rangeEnd: {x: 0, y: 0}
   posMoveEnemy: {x: 0, y: 0, z: 0}
+  rangeEnemyCanGo: 0
+  defaultPos: {x: 0, y: 0}
+  startPoint: {x: 0, y: 0}
+  posNow: {x: 0, y: 0}
+  toBack: 0
+--- !u!114 &425091487312683567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883317979734481793}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6bf023078a468479835fd98de14db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {x: 0, y: 0}
+  posMoveEnemy: {x: 0, y: 0, z: 0}
+  moveSpeed: 0
+  toPlayer: 0
+  whenHit: {x: 0, y: 0}
 --- !u!82 &2883317979734481799
 AudioSource:
   m_ObjectHideFlags: 0
