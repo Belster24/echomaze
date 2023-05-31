@@ -17,9 +17,13 @@ public class DragAndShoot : MonoBehaviour
     [SerializeField]int numProjectiles;
     [SerializeField]float spreadAngle;
     [SerializeField] GameObject indicator;
+    private LineRenderer lineRenderer;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
+        lineRenderer.positionCount = 2;
+
     }
 
     private void Update()
@@ -40,6 +44,7 @@ public class DragAndShoot : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        lineRenderer.enabled = true;
         if (Input.GetMouseButtonDown(0))
         {
             dragStartPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -61,15 +66,18 @@ public class DragAndShoot : MonoBehaviour
         float angle = Mathf.Atan2(dragDirection.y, dragDirection.x) * Mathf.Rad2Deg;
         gameObject.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         Debug.DrawLine(dragStartPos, dragEndPos);
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, dragEndPos);
     }
 
     private void OnMouseUp()
     {
+        lineRenderer.enabled = false;
         Invoke("ShootingWave", 0f);
         Invoke("ShootingWave", 0.3f);
         Invoke("ShootingWave", 0.8f);
-           
-        
+
+
     }
 
     void ShootingWave()
@@ -86,5 +94,8 @@ public class DragAndShoot : MonoBehaviour
             GameObject echoBall = Instantiate(echoPrefab, spawnPos, Quaternion.identity);
             echoBall.GetComponent<Rigidbody2D>().AddForce(direction * force, ForceMode2D.Impulse);
         }
+
+
+
     }
 }

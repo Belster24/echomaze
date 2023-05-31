@@ -12,6 +12,7 @@ TagManager:
   - bell
   - belldoormanager
   - spawnedlight
+  - echo
   layers:
   - Default
   - TransparentFX

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Lock : MonoBehaviour
 {
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip clip;
-    [SerializeField] GameObject Player;
+    AudioSource audioSource;
+     GameObject Player;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();  
         InvokeRepeating("PlayAudio", 1f, 1f);
         Player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -18,7 +18,7 @@ public class Lock : MonoBehaviour
     }
     void PlayAudio()
     {
-        audioSource.PlayOneShot(clip);
+        audioSource.Play();
     }
 
     private void OnDestroy()
