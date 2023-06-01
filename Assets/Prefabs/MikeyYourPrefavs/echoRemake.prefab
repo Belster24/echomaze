@@ -71,7 +71,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 779056b485a203549af954f42c4f167a, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1739712745484551954
 SpriteRenderer:
@@ -239,7 +239,7 @@ MonoBehaviour:
   ID: 0
   line: {fileID: 0}
   forceMagnitude: 0
-  shrinkRate: 0.05
+  shrinkRate: 0.03
   speed: 0
   speedDecrease: 0
   newThickness: 0
