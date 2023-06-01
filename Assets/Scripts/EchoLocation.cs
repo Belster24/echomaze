@@ -16,7 +16,8 @@ public class EchoLocation : MonoBehaviour
     [SerializeField]int prefabID = 0;
     public static int nextPrefabID = 0;
     LineRenderer lineRenderer;
-    int collisionCount;
+   
+
     private void Start()
     {
         
@@ -86,6 +87,12 @@ public class EchoLocation : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //ContactPoint2D contact = collision.contacts[collisionCount];
+        //Vector3 pos = contact.point;
+        //Instantiate(collisionLight, pos, Quaternion.identity);
+        //collisionCount++;
+
+
 
         if (collision.gameObject.CompareTag("wall") || collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("lock"))
         {
@@ -115,9 +122,14 @@ public class EchoLocation : MonoBehaviour
 
 
 
+    private void OnDisable()
+    {
+        collisionCount = 0;
+        
+    }
 
 
 
 
-    
+
 }

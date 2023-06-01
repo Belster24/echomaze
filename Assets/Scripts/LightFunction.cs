@@ -17,7 +17,7 @@ public class LightFunction : MonoBehaviour
         gameObject.GetComponent<Light2D>().enabled = true;
         yield return new WaitForSeconds(2f);
         gameObject.GetComponent<Light2D>().enabled = false;
-        gameObject.GetComponent<Shape>().settings.fillColor2 = Color.black;
+        //gameObject.GetComponent<Shape>().settings.fillColor2 = Color.black;
     }
 
 

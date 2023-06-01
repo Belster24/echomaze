@@ -22,8 +22,8 @@ public class Lock : MonoBehaviour
     }
 
     private void OnDestroy()
-    {
-        gameObject.GetComponentInParent<BellAndDoor>().playKeySound();
+    {  
+      gameObject.GetComponentInParent<BellAndDoor>().playKeySound();
     }
 
 
