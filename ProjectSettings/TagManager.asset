@@ -13,6 +13,7 @@ TagManager:
   - belldoormanager
   - spawnedlight
   - echo
+  - manager
   layers:
   - Default
   - TransparentFX

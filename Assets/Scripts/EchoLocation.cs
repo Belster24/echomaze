@@ -122,13 +122,6 @@ public class EchoLocation : MonoBehaviour
 
 
 
-    private void OnDisable()
-    {
-        collisionCount = 0;
-        
-    }
-
-
 
 
 
