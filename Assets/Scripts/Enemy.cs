@@ -14,9 +14,12 @@ public class Enemy : MonoBehaviour
     public Vector2 startPoint;
     public Vector2 posNow;
     public bool toBack = false;
+
+    GameManager gameManager;
     
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("manager").GetComponent<GameManager>();
         Player = GameObject.FindGameObjectWithTag("Player");
         startPoint = transform.position;
         audioSource = GetComponent<AudioSource>();
@@ -37,27 +40,27 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            
-            posMoveEnemy = defaultPos;
 
-           
-        }
-
-        if(posNow == defaultPos || toBack) 
-        {
-            toBack = true;
-            posMoveEnemy = startPoint;
-            
-            if(posNow == startPoint)
+            if (posNow == defaultPos || toBack)
             {
-                toBack = false;
+                toBack = true;
+                posMoveEnemy = startPoint;
+
+                if (posNow == startPoint)
+                {
+                    toBack = false;
+                }
             }
+            if (!toBack)
+            {
+                posMoveEnemy = defaultPos;
+
+            }
+
+
         }
-        if(!toBack)
-        {
-            posMoveEnemy = defaultPos;
-            
-        }
+
+        
 
         float distance = Vector2.Distance(transform.position, Player.transform.position);
         audioSource.volume = Mathf.Clamp(1.0f - (distance / distanceHear), 0.0f, 1.0f);
@@ -66,6 +69,19 @@ public class Enemy : MonoBehaviour
     void PlayAudio()
     {
         audioSource.Play();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Player")){
+
+            Debug.Log("Mam te");
+            gameManager.EnemyHit();
+
+        }
+
+
     }
 
 }

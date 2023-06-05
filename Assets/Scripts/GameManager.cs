@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(highScoreScene);
 
     }
+    public void EnemyHit()
+    {
+        player.position = levelSpawnPoint[currentLevel].position;
+    }
 
     
     public void MoveToNextLevel()
