@@ -3657,7 +3657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629deba72cc3763449872399961c4566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locks: []
+  locks:
+  - {fileID: 1817003591}
   door: {fileID: 1013159977}
   clips:
   - {fileID: 8300000, guid: cc19fe6bc509ea94e91c0c3e93b81df6, type: 3}
@@ -3982,6 +3983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 281f3b3c3f7de8b4aba844f7989ba8ab, type: 3}
+--- !u!1 &1817003591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6252091445414071042, guid: 281f3b3c3f7de8b4aba844f7989ba8ab, type: 3}
+  m_PrefabInstance: {fileID: 1817003590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1852722458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4728,6 +4734,10 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4850512519193491792, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ee1f2ed543d23d949bab1bd416d3982c, type: 3}
     - target: {fileID: 4850512519193491795, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
       propertyPath: power
       value: 3
@@ -4786,6 +4796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4850512519193491798, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
+    - {fileID: 4850512519193491799, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
 --- !u!1 &4850512517931679101 stripped
 GameObject:
@@ -4809,6 +4820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5f7740a577da24a97690ab4fc96d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bd: {fileID: 1677974166}
 --- !u!120 &4850512517931679119
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4816,7 +4828,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4850512517931679101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
