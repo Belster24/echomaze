@@ -25,7 +25,8 @@ public class BellAndDoor : MonoBehaviour
     {
         if (count == locks.Count) //this will change the door color when all the keys are catched
         {
-           door.gameObject.GetComponent<Light2D>().color = Color.green;
+            Debug.Log("door unlocekd");
+           door.GetComponent<Light2D>().color = Color.green;
            
             audioSource.clip = clips[1];
             audioSource.PlayDelayed(1);

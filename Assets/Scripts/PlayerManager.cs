@@ -10,14 +10,14 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] GameObject bellAndDoorManager;
 
     [SerializeField]int lockCount = 0;
-    GameManager gameManager;    
+    GameManager gameManager;
+    [SerializeField]Transform spawn;
 
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("manager").GetComponent<GameManager>();
-        bellAndDoorManager = GameObject.FindGameObjectWithTag("belldoormanager");
         audioSource = GetComponent<AudioSource>();    
     }
 
@@ -36,13 +36,12 @@ public class PlayerManager : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("door"))
         {
-            Debug.Log("s");
             if (bellAndDoorManager.GetComponent<BellAndDoor>().canEndLevel == true)
                  gameManager.MoveToNextLevel();
         }
-        //else if (collision.gameObject.CompareTag("enemy"))
-        //{
-        //    SceneManager.LoadScene("level_1");
-        //}
+        else if (collision.gameObject.CompareTag("enemy"))
+        {
+            transform.position = spawn.position;
+        }
     }
 }

@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     public List<Transform> levelSpawnPoint;
     public List<GameObject> levelUI;
 
-    public Transform player;
+    public List<GameObject> Levels;
+    public List<GameObject> player;
+
     public string highScoreScene;
 
     public void Awake()
@@ -19,8 +21,7 @@ public class GameManager : MonoBehaviour
 
     public void StartPassage()
     {
-        currentLevel = 0;
-        player.position = levelSpawnPoint[0].position;
+        Levels[currentLevel].SetActive(true);
         //move to level 1
     }
     public void EndPassage()
@@ -31,16 +32,16 @@ public class GameManager : MonoBehaviour
     }
     public void EnemyHit()
     {
-        player.position = levelSpawnPoint[currentLevel].position;
+        player[currentLevel].transform.position = levelSpawnPoint[currentLevel].position;
     }
 
     
     public void MoveToNextLevel()
     {
+        Levels[currentLevel].SetActive(false);
         // move to next level in passage
         currentLevel++;
-        player.position = levelSpawnPoint[currentLevel].position;
-        levelUI[currentLevel].SetActive(true);
+        Levels[currentLevel].SetActive(true);
     }
 
     

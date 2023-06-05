@@ -33,7 +33,6 @@ public class EntityBell : MonoBehaviour
 
     private IEnumerator PlayBell()
     {
-        Debug.Log("yes madame, bell");
         virtualCamera.gameObject.SetActive(true);
         light.gameObject.SetActive(true);
         light.intensity = Mathf.Lerp(0, 0.6f, bellLength / 5);

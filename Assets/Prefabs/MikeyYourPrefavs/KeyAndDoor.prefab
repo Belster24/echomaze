@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5015966147540321761}
   - component: {fileID: 5015966147540321760}
   m_Layer: 0
-  m_Name: AddBellandDoorOnThis
+  m_Name: KeyAndDoor
   m_TagString: belldoormanager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

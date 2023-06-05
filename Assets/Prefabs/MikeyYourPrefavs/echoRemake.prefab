@@ -239,7 +239,7 @@ MonoBehaviour:
   ID: 0
   line: {fileID: 0}
   forceMagnitude: 0
-  shrinkRate: 0.32
+  shrinkRate: 0.1
   speed: 0
   speedDecrease: 0
   newThickness: 0
