@@ -12,6 +12,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]int lockCount = 0;
     GameManager gameManager;
     [SerializeField]Transform spawn;
+    public bool startTimer;
+
 
 
     // Start is called before the first frame update

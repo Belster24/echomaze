@@ -17,7 +17,6 @@ public class DragAndShoot : MonoBehaviour
     [SerializeField]int numProjectiles;
     [SerializeField]float spreadAngle;
     [SerializeField] GameObject indicator;
-    [SerializeField] GameObject highScore;
     private LineRenderer lineRenderer;
     private void Start()
     {
@@ -31,8 +30,8 @@ public class DragAndShoot : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            //if(highScore.GetComponent<HighScoreTime>() != null)
-            //    highScore.GetComponent<HighScoreTime>().startTimer = true;
+            if (gameObject.GetComponent<HighScoreTime>() != null)
+                gameObject.GetComponent<HighScoreTime>().startTimer = true;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = transform.position.z;
             transform.position = Vector3.MoveTowards(transform.position, mousePos, moveSpeed * Time.deltaTime);
@@ -99,4 +98,8 @@ public class DragAndShoot : MonoBehaviour
 
 
     }
+
+
+
+
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class DisableEnableObject : MonoBehaviour
 {
@@ -15,23 +16,26 @@ public class DisableEnableObject : MonoBehaviour
 
     private IEnumerator DisableEnableRoutine()
     {
-            // Disable all the GameObjects in the list
-            foreach (var obj in objectsToDisableEnable)
-            {
-                obj.SetActive(false);
-            }
+        // Disable all the GameObjects in the list
+        foreach (var obj in objectsToDisableEnable)
+        {
+            obj.tag = "Untagged";
+            obj.GetComponent<Light2D>().color = Color.green;
+            obj.GetComponent<SpriteRenderer>().color = Color.green;
+        }   
 
-            // Wait for the specified duration
-            yield return new WaitForSeconds(disableDuration);
+        // Wait for the specified duration
+        yield return new WaitForSeconds(disableDuration);
 
-        
-            foreach (var obj in objectsToDisableEnable)
-            {
-                Debug.Log("s");
-                obj.SetActive(true);
-            }
 
-            yield return new WaitForSeconds(disableDuration);
+        foreach (var obj in objectsToDisableEnable)
+        {
+            obj.tag = "enemy";
+            obj.GetComponent<Light2D>().color = Color.red;
+            obj.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+
+        yield return new WaitForSeconds(disableDuration);
 
         StartCoroutine(DisableEnableRoutine());
 

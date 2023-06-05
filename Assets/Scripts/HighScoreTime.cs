@@ -10,13 +10,9 @@ public class HighScoreTime : MonoBehaviour
     public bool startTimer;
     [SerializeField]TextMeshProUGUI timerText;
     [SerializeField] GameManager gameManager;
-    float timer;
+    public float timer;
     // Update is called once per frame
 
-    private void Start()
-    {
-        gameManager = GameObject.FindGameObjectWithTag("manager").GetComponent<GameManager>();
-    }
     void Update()
     {
         if (startTimer)
@@ -26,10 +22,7 @@ public class HighScoreTime : MonoBehaviour
         }
     }
 
-    public void gameOver()
-    {
-        PlayerPrefs.SetFloat("highScore", timer);
-        gameManager.EndPassage();
 
-    }
+
+
 }

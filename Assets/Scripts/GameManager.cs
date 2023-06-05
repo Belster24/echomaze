@@ -13,12 +13,15 @@ public class GameManager : MonoBehaviour
     public List<GameObject> player;
 
     public string highScoreScene;
+    public float highScoreTime;
+
 
     public void Awake()
     {
         StartPassage();
     }
 
+   
     public void StartPassage()
     {
         Levels[currentLevel].SetActive(true);
@@ -38,6 +41,29 @@ public class GameManager : MonoBehaviour
     
     public void MoveToNextLevel()
     {
+        highScoreTime = player[currentLevel].gameObject.GetComponent<HighScoreTime>().timer;
+        if (currentLevel == 0)
+        {
+            Debug.Log("Level1");
+            PlayerPrefs.SetFloat("level1score", highScoreTime);
+        }
+        else if (currentLevel == 1)
+        {
+            Debug.Log("Level1");
+            PlayerPrefs.SetFloat("level2score", highScoreTime);
+        }
+        else if (currentLevel == 2)
+        {
+            Debug.Log("Level2");
+            PlayerPrefs.SetFloat("level3score", highScoreTime);
+        }
+        else if (currentLevel == 3)
+        {
+            Debug.Log("Level3");
+            PlayerPrefs.SetFloat("level4score", highScoreTime);
+            SceneManager.LoadScene(highScoreScene);
+        }
+       
         Levels[currentLevel].SetActive(false);
         // move to next level in passage
         currentLevel++;
