@@ -22,7 +22,8 @@ public class DisableEnableObject : MonoBehaviour
             obj.tag = "Untagged";
             obj.GetComponent<Light2D>().color = Color.green;
             obj.GetComponent<SpriteRenderer>().color = Color.green;
-        }   
+            obj.GetComponent<BoxCollider2D>().enabled = false;
+        }
 
         // Wait for the specified duration
         yield return new WaitForSeconds(disableDuration);
@@ -33,6 +34,7 @@ public class DisableEnableObject : MonoBehaviour
             obj.tag = "enemy";
             obj.GetComponent<Light2D>().color = Color.red;
             obj.GetComponent<SpriteRenderer>().color = Color.red;
+            obj.GetComponent<BoxCollider2D>().enabled = true;
         }
 
         yield return new WaitForSeconds(disableDuration);
