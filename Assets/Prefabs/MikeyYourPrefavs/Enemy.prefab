@@ -208,10 +208,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  distanceToSee: 6
+  distanceToSee: 4
   Player: {fileID: 0}
   audioSource: {fileID: 0}
-  distanceHear: 6
+  distanceHear: 5
   posMoveEnemy: {x: 0, y: 0, z: 0}
   rangeEnemyCanGo: 0
   defaultPos: {x: 0, y: 0}
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {x: 0, y: 0}
   posMoveEnemy: {x: 0, y: 0, z: 0}
-  moveSpeed: 0
+  moveSpeed: 2
   toPlayer: 0
   whenHit: {x: 0, y: 0}
 --- !u!82 &2883317979734481799

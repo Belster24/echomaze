@@ -239,9 +239,8 @@ MonoBehaviour:
   ID: 0
   line: {fileID: 0}
   forceMagnitude: 0
-  shrinkRate: 0.03
+  shrinkRate: 0.32
   speed: 0
   speedDecrease: 0
   newThickness: 0
   prefabID: 0
-  collisionLight: {fileID: 190906946965978234, guid: c1aef8afbdbea094a8225a77b8b6ea60, type: 3}

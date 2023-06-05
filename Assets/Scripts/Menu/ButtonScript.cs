@@ -22,7 +22,12 @@ public class ButtonScript : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("level_1");
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 }
     
