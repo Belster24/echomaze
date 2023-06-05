@@ -21832,6 +21832,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 6396616}
+    - target: {fileID: 4850512519193491792, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ee1f2ed543d23d949bab1bd416d3982c, type: 3}
     - target: {fileID: 4850512519193491795, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
       propertyPath: power
       value: 2
@@ -68121,6 +68125,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 6396616}
+    - target: {fileID: 4850512519193491792, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ee1f2ed543d23d949bab1bd416d3982c, type: 3}
     - target: {fileID: 4850512519193491795, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
       propertyPath: power
       value: 2
@@ -70746,6 +70754,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 6396616}
+    - target: {fileID: 4850512519193491792, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ee1f2ed543d23d949bab1bd416d3982c, type: 3}
     - target: {fileID: 4850512519193491795, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
       propertyPath: power
       value: 2
@@ -91426,6 +91438,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 6396616}
+    - target: {fileID: 4850512519193491792, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ee1f2ed543d23d949bab1bd416d3982c, type: 3}
     - target: {fileID: 4850512519193491795, guid: 3e6827723dfb73e4381308c499833ccb, type: 3}
       propertyPath: power
       value: 2

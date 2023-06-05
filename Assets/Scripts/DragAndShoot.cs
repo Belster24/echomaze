@@ -18,12 +18,13 @@ public class DragAndShoot : MonoBehaviour
     [SerializeField]float spreadAngle;
     [SerializeField] GameObject indicator;
     private LineRenderer lineRenderer;
+    AudioSource audioSource;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
         lineRenderer.positionCount = 2;
-
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -73,6 +74,7 @@ public class DragAndShoot : MonoBehaviour
     private void OnMouseUp()
     {
         lineRenderer.enabled = false;
+        
         Invoke("ShootingWave", 0f);
         Invoke("ShootingWave", 0.3f);
         Invoke("ShootingWave", 0.8f);
@@ -82,6 +84,7 @@ public class DragAndShoot : MonoBehaviour
 
     void ShootingWave()
     {
+        audioSource.Play();
         float force = power * Vector2.Distance(dragStartPos, dragEndPos);
         Vector2 spawnPos = transform.position + (Vector3)dragDirection * 0.5f;
         float angleStep = spreadAngle / (numProjectiles - 1);
