@@ -4,7 +4,7 @@ public class Lock : MonoBehaviour
 {
     AudioSource audioSource;
      GameObject Player;
-
+    [SerializeField] bool onDestroySound = true;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();  
@@ -22,8 +22,8 @@ public class Lock : MonoBehaviour
     }
 
     private void OnDestroy()
-    {  
-      gameObject.GetComponentInParent<BellAndDoor>().playKeySound();
+    { 
+       if(onDestroySound) gameObject.GetComponentInParent<BellAndDoor>().playKeySound();
     }
 
 
