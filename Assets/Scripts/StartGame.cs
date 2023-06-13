@@ -7,6 +7,12 @@ public class StartGame : MonoBehaviour
 {
     [SerializeField]GameObject tutorial;
     [SerializeField]GameObject Menu;
+
+    [SerializeField] GameObject menuText;
+    [SerializeField] GameObject leader;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +30,18 @@ public class StartGame : MonoBehaviour
     public void startGame()
     {
         SceneManager.LoadScene("level_1");
+    }
+
+    public void playTutorial()
+    {
+        tutorial.SetActive(true);
+        Menu.SetActive(false);
+    }
+
+    public void showLeader()
+    {
+        menuText.SetActive(false);
+        leader.SetActive(true);
     }
 
     public void QuitGame()

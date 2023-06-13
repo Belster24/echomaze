@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     private bool fly = false;
     private int clickCount = 0;
 
+   
 
     
     // Update is called once per frame
@@ -66,6 +67,16 @@ public class PauseMenu : MonoBehaviour
     }
 
    
+
+    public void SaveScore()
+    {
+
+
+
+
+    }
+
+    
 
    
 }
