@@ -38,7 +38,7 @@ public class BellAndDoor : MonoBehaviour
 
             count = 0;
             updateText = false;
-            keyText.text = count.ToString() + "/" + locks.Count.ToString();
+            keyText.text = "Door Unlocked";
             canEndLevel = true;
            
         }
