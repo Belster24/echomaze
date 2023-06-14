@@ -3279,6 +3279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorial: {fileID: 1308122384}
   Menu: {fileID: 2011535963}
+  menuText: {fileID: 0}
+  leader: {fileID: 0}
 --- !u!1 &578848921
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,7 +4225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &701863321
 Transform:
   m_ObjectHideFlags: 0
@@ -5680,6 +5682,7 @@ GameObject:
   - component: {fileID: 898764092}
   - component: {fileID: 898764094}
   - component: {fileID: 898764093}
+  - component: {fileID: 898764095}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5704,7 +5707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -32}
+  m_AnchoredPosition: {x: 0, y: -98}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898764093
@@ -5804,6 +5807,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898764091}
   m_CullTransparentMesh: 1
+--- !u!136 &898764095
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898764091}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &958071265
 GameObject:
   m_ObjectHideFlags: 0
@@ -6429,7 +6446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1067315012
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8466,6 +8483,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   count: 0
   canEndLevel: 0
+  keyText: {fileID: 0}
 --- !u!4 &1677974167
 Transform:
   m_ObjectHideFlags: 0
@@ -9700,7 +9718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2011535964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10275,7 +10293,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420033}
         m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
-        m_MethodName: startGame
+        m_MethodName: showLeader
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

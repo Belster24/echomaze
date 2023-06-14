@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using TMPro;
 
 public class BellAndDoor : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class BellAndDoor : MonoBehaviour
     [HideInInspector]
     public int count;
     public bool canEndLevel = false;
+    [SerializeField]TextMeshProUGUI keyText;
+    bool updateText = true;
 
     private void Start()
     {
@@ -23,6 +26,8 @@ public class BellAndDoor : MonoBehaviour
 
     private void Update()
     {
+        if (updateText)
+            keyText.text = count.ToString() + "/" + locks.Count.ToString();
         if (count == locks.Count) //this will change the door color when all the keys are catched
         {
             Debug.Log("door unlocekd");
@@ -30,9 +35,14 @@ public class BellAndDoor : MonoBehaviour
            
             audioSource.clip = clips[1];
             audioSource.PlayDelayed(1);
+
             count = 0;
+            updateText = false;
             canEndLevel = true;
+           
         }
+        
+
     }
 
 
