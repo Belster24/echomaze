@@ -27,7 +27,7 @@ public class BellAndDoor : MonoBehaviour
     private void Update()
     {
         if (updateText)
-            keyText.text = count.ToString() + "/" + locks.Count.ToString();
+            keyText.text = "Door Unlocked";
         if (count == locks.Count) //this will change the door color when all the keys are catched
         {
             Debug.Log("door unlocekd");
