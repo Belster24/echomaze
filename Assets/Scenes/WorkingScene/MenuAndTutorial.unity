@@ -3279,8 +3279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorial: {fileID: 1308122384}
   Menu: {fileID: 2011535963}
-  menuText: {fileID: 0}
-  leader: {fileID: 0}
+  menuText: {fileID: 701863320}
+  leader: {fileID: 1067315011}
 --- !u!1 &578848921
 GameObject:
   m_ObjectHideFlags: 0
