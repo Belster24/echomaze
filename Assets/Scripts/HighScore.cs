@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 
 public class HighScore : MonoBehaviour
@@ -17,6 +18,7 @@ public class HighScore : MonoBehaviour
     float highScoreValue3;
     float highScoreValue4;
     public TMP_InputField names;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +41,119 @@ public class HighScore : MonoBehaviour
     {
 
         Debug.Log(names.text);
-        
 
+        //Level 1 Highscore 
+        int count1 = 1;
+
+        while (true)
+        {
+            if (PlayerPrefs.HasKey("leader1" + count1))
+            {
+                if (highScoreValue1 < PlayerPrefs.GetFloat("leader1" + count1))
+                {
+                    PlayerPrefs.SetString("leadername1" + count1, names.text);
+
+                    PlayerPrefs.SetFloat("leader1" + count1, highScoreValue1);
+                   break;
+                }
+                else
+                {
+                    count1++;
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetString("leadername1" + count1, names.text);
+                PlayerPrefs.SetFloat("leader1" + count1, highScoreValue1);
+                break;
+
+            }
+
+        }
+
+        //Level 2 Highscore
+        int count2 = 1;
+
+        while (true)
+        {
+            if (PlayerPrefs.HasKey("leader2" + count2))
+            {
+                if (highScoreValue2 < PlayerPrefs.GetFloat("leader2" + count2))
+                {
+                    PlayerPrefs.SetString("leadername2" + count2, names.text);
+                    PlayerPrefs.SetFloat("leader2" + count2, highScoreValue2);
+                    break;
+                }
+                else
+                {
+                    count2++;
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetString("leadername2" + count2, names.text);
+                PlayerPrefs.SetFloat("leader2" + count2, highScoreValue2);
+                break;
+            }
+
+        }
+
+        //Level 3 Highscore
+        int count3 = 1;
+
+        while (true)
+        {
+            if (PlayerPrefs.HasKey("leader3" + count3))
+            {
+                if (highScoreValue2 < PlayerPrefs.GetFloat("leader3" + count3))
+                {
+                    PlayerPrefs.SetString("leadername3" + count3, names.text);
+                    PlayerPrefs.SetFloat("leader3" + count3, highScoreValue3);
+                    break;
+                }
+                else
+                {
+                    count3++;
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetString("leadername3" + count3, names.text);
+                PlayerPrefs.SetFloat("leader3" + count3, highScoreValue3);
+                break;
+            }
+
+        }
+
+        //Level 4 Highscore
+        int count4 = 1;
+
+        while (true)
+        {
+            if (PlayerPrefs.HasKey("leader4" + count4))
+            {
+                if (highScoreValue2 < PlayerPrefs.GetFloat("leader4" + count4))
+                {
+                    PlayerPrefs.SetString("leadername4" + count4, names.text);
+                    PlayerPrefs.SetFloat("leader4" + count4, highScoreValue4);
+                    break;
+                }
+                else
+                {
+                    count3++;
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetString("leadername4" + count4, names.text);
+                PlayerPrefs.SetFloat("leader4" + count4, highScoreValue4);
+                break;
+            }
+
+        }
+
+
+        /*
         for (int i = 1; i < 5; i++)
         {
            
@@ -109,7 +222,7 @@ public class HighScore : MonoBehaviour
             }
 
 
-        }
+        }*/
         
 
         Debug.Log(PlayerPrefs.GetFloat("leader11"));
