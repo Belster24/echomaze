@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class StartGame : MonoBehaviour
 {
@@ -11,13 +12,10 @@ public class StartGame : MonoBehaviour
     [SerializeField] GameObject menuText;
     [SerializeField] GameObject leader;
 
+    
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-      
-    }
+   
 
     public void startGame()
     {
@@ -40,6 +38,9 @@ public class StartGame : MonoBehaviour
         menuText.SetActive(true);
         leader.SetActive(false);
     }
+
+
+
 
     public void QuitGame()
     {

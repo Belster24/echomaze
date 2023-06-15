@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,12 +18,20 @@ public class PauseMenu : MonoBehaviour
     private bool fly = false;
     private int clickCount = 0;
 
-   
+    public Slider vol;
 
-    
+
+    private void Start()
+    {
+        vol = GameObject.Find("Slider").GetComponent<Slider>();
+
+        vol.value = AudioListener.volume;
+    }
     // Update is called once per frame
     void Update()
     {
+
+        AudioListener.volume = vol.value;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
