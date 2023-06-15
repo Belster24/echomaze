@@ -43,6 +43,11 @@ public class StartGame : MonoBehaviour
         menuText.SetActive(false);
         leader.SetActive(true);
     }
+    public void hideLeader()
+    {
+        menuText.SetActive(true);
+        leader.SetActive(false);
+    }
 
     public void QuitGame()
     {
