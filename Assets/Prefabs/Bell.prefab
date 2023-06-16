@@ -375,8 +375,8 @@ GameObject:
   - component: {fileID: 5761817791142297100}
   - component: {fileID: 5761817791142297105}
   - component: {fileID: 5761817791142297104}
-  - component: {fileID: 5761817791142297106}
   - component: {fileID: 5761817791142297107}
+  - component: {fileID: 2995222220399697948}
   m_Layer: 0
   m_Name: Bell
   m_TagString: Untagged
@@ -554,21 +554,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
---- !u!114 &5761817791142297106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5761817791142297099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b611b0ee1799927439148a84fd939968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amplitudeY: 0.17
-  amplitudeX: 0
-  frequency: 2.43
 --- !u!82 &5761817791142297107
 AudioSource:
   m_ObjectHideFlags: 0
@@ -665,3 +650,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2995222220399697948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5761817791142297099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b611b0ee1799927439148a84fd939968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitudeY: 0.5
+  amplitudeX: 0.5
+  frequency: 1
