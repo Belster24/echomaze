@@ -14,7 +14,7 @@ public class changeColor : MonoBehaviour
 
     // Update is called once per frame
     [System.Obsolete]
-    void Update()
+    void FixedUpdate()
     {
         gameObject.GetComponent<ParticleSystem>().startColor =
             gameObject.GetComponentInParent<SpriteRenderer>().color;
